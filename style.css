@@ -7,6 +7,7 @@
 .flex_header {
     display: flex;
     justify-content: space-between;
+    border-bottom: black solid 1px;
 }
 .logo {
     display: flex;
@@ -35,21 +36,23 @@
 }
 .list {
     list-style: none;
-    margin-right: 30px;
-    margin-top: 15px;
+    margin: 15px 30px 0 0;
+}
+.list:last-child {
+    margin: 15px 0;
 }
 .link {
     text-decoration: none;
     color: black;
 
     font-family: 'Montserrat', serif;
-    font-style: 16px;
+    font-size: 16px;
     font-weight: 900;
 }
 
 .title {
     font-family: 'Montserrat', serif;
-    font-style: 30px;
+    font-size: 30px;
     font-weight: 900;
     margin-bottom: 50px;
 
@@ -57,7 +60,7 @@
 }
 .subtitle {
     font-family: 'Montserrat', serif;
-    font-style: 16px;
+    font-size: 24px;
     font-weight: 900;
 
     color: black;
@@ -65,7 +68,9 @@
     margin-bottom: 30px;
 }
 .game_menu {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 25px;
     padding: 0;
     justify-content: space-between;
 }
@@ -73,31 +78,33 @@
     list-style: none;
     background-color: #1f1f1f;
     padding: 30px;
-    margin-right: 25px;
     border-radius: 10px;
 }
+.game_list:last-child {
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
 .game_img {
-    margin-bottom: 20px;
-    width: 300px;
-    height: 170px;
+    margin: 0 auto 20px;
+    width: 100%;
 }
 .game_title {
     font-family: serif;
-    font-style: 16px;
+    font-size: 16px;
     font-weight: 700;
 
     color: white;
 }
 .game_text {
     font-family: serif;
-    font-style: 14px;
+    font-size: 14px;
     font-weight: 700;
 
     color: white;
 }
 .game_subtext {
     font-family: 'Montserrat', serif;
-    font-style: 14px;
+    font-size: 14px;
     font-weight: 700;
 
     color: white;
@@ -114,8 +121,22 @@
     grid-template-columns: 1fr 1fr;
 }
 .gallery_img {
-    width: 500px;
+    width: 100%;
+}
+.game_static {
+    display: block;
+    margin-top: 50px;
+    text-align: center;
+    background-color: white;
+    color: black;
+    padding: 15px 0;
+    border-radius: 10px;
+    box-shadow: 0 5px 0 red;
 
+    font-family: 'Montserrat', serif;
+    font-style: 16px;
+    font-weight: 700;
+    text-decoration: none;
 }
 .first {
     height: 300px;
@@ -127,4 +148,70 @@
     border: 10px solid black;
     border-radius: 10px;
     padding: 5px;
+}
+
+@media screen and (max-width: 1100px) {
+    .title {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+    .subtitle {
+        font-size: 20px;
+    }
+    
+    .game_title {
+        font-size: 14px;
+    }
+    .game_text {
+        font-size: 12px;
+        font-weight: 500;
+    }
+    .game_subtext {
+        font-size: 10px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .logo_img {
+        width: 30px;
+        height: 30px;
+    }
+    .logo_text {
+        padding-top: 20px;
+        font-size: 16px;
+    }
+    .list {
+        margin: 0 30px 0 0;
+    }
+    .list:last-child {
+        margin: 0;
+    }
+    .game_menu {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .first {
+        height: 250px;
+    }
+}
+@media screen and (max-width: 540px) {
+    .flex_header {
+        flex-direction: column;
+        align-items: center;
+    }
+    .menu {
+        margin-top: 0;
+        padding: 0;
+    }
+    .game_menu {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .grid {
+        display: flex;
+        flex-direction: column;
+    }
+    .first {
+        height: 175px;
+    }
 }
